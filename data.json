@@ -1,6 +1,17 @@
 {
   "links": [
     {
+      "url": "https://missing.csail.mit.edu/",
+      "title": "The Missing Semester of Your CS Education",
+      "description": "CS 실무 강의",
+      "tags": [
+        "cs"
+      ],
+      "folderId": "8050122d-dbc9-412f-bf79-ea1b25c9c6e4",
+      "id": "c6a26046-152e-42ae-aaa1-b67e58c9b7ef",
+      "createdAt": 1773647298628
+    },
+    {
       "url": "https://vite.dev/blog/announcing-vite8",
       "title": "Vite 8.0 is out!",
       "description": "Vite 업데이트",
