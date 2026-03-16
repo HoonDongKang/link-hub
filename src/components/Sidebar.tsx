@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useLinks } from '../context/LinkContext';
 import { Folder, Home, Plus, Hash } from 'lucide-react';
 import AddFolderModal from './modals/AddFolderModal';
 import './Sidebar.css';
+import PasswordModal from './modals/PasswordModal';
 
 const Sidebar: React.FC = () => {
   const { folders } = useLinks();
-  const [isAddFolderModalOpen, setIsAddFolderModalOpen] = React.useState(false);
+  const [isAddFolderModalOpen, setIsAddFolderModalOpen] = useState(false);
+  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
+
+  const handleAddLinkClick = () => {
+    if (sessionStorage.getItem('auth_password')) {
+      setIsAddFolderModalOpen(true);
+    } else {
+      setIsPasswordModalOpen(true);
+    }
+  };
+
 
   return (
     <aside className="sidebar glass-panel">
@@ -29,7 +40,7 @@ const Sidebar: React.FC = () => {
         <div className="nav-section">
           <div className="nav-section-title flex-between">
             <span>Folders</span>
-            <button className="add-folder-btn" title="New Folder" onClick={() => setIsAddFolderModalOpen(true)}>
+            <button className="add-folder-btn" title="New Folder" onClick={() => handleAddLinkClick()}>
               <Plus size={16} />
             </button>
           </div>
@@ -56,6 +67,12 @@ const Sidebar: React.FC = () => {
           <span>Local User</span>
         </div>
       </div>
+
+      <PasswordModal
+        isOpen={isPasswordModalOpen}
+        onClose={() => setIsPasswordModalOpen(false)}
+        onSuccess={() => setIsAddFolderModalOpen(true)}
+      />
 
       <AddFolderModal 
         isOpen={isAddFolderModalOpen} 
