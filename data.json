@@ -1,4 +1,14 @@
 {
-  "links": [],
+  "links": [
+    {
+      "url": "https://naver.com",
+      "title": "네이버",
+      "description": "네이버",
+      "tags": [],
+      "folderId": null,
+      "id": "5f3a1041-f699-4394-8add-56939e1439b3",
+      "createdAt": 1773645220574
+    }
+  ],
   "folders": []
 }
