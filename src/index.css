@@ -119,18 +119,11 @@ textarea {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.4s var(--transition-bounce) forwards;
-}
-
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(20px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
-.animate-slide-right {
-  animation: slideInRight 0.4s var(--transition-bounce) forwards;
-}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
