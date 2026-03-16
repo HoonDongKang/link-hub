@@ -1,6 +1,6 @@
-import React, { createContext, useContext, type ReactNode } from 'react';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import React, { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import type { Link, Folder } from '../types';
+import { fetchData, saveData } from '../services/api';
 
 interface LinkContextType {
   links: Link[];
@@ -16,36 +16,30 @@ interface LinkContextType {
 
 const LinkContext = createContext<LinkContextType | undefined>(undefined);
 
-// Initial dummy data for better UX on first load
-const initialFolders: Folder[] = [
-  { id: 'f1', name: 'Design Inspiration', color: '#ec4899', createdAt: Date.now() },
-  { id: 'f2', name: 'Dev Tools', color: '#6366f1', createdAt: Date.now() - 100000 },
-];
-
-const initialLinks: Link[] = [
-  {
-    id: 'l1',
-    title: 'React Documentation',
-    url: 'https://react.dev',
-    description: 'The official React documentation.',
-    tags: ['react', 'frontend'],
-    folderId: 'f2',
-    createdAt: Date.now(),
-  },
-  {
-    id: 'l2',
-    title: 'Dribbble',
-    url: 'https://dribbble.com',
-    description: 'Discover the world’s top designers & creatives.',
-    tags: ['design', 'inspiration'],
-    folderId: 'f1',
-    createdAt: Date.now() - 50000,
-  }
-];
-
 export const LinkProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [links, setLinks] = useLocalStorage<Link[]>('linkhub_links', initialLinks);
-  const [folders, setFolders] = useLocalStorage<Folder[]>('linkhub_folders', initialFolders);
+  const [links, setLinks] = useState<Link[]>([]);
+  const [folders, setFolders] = useState<Folder[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const data = await fetchData();
+      if (data) {
+        setLinks(data.links || []);
+        setFolders(data.folders || []);
+      }
+      setIsLoaded(true);
+    };
+    loadData();
+  }, []);
+
+  const updateAndSave = (newLinks: Link[], newFolders: Folder[]) => {
+    setLinks(newLinks);
+    setFolders(newFolders);
+    if (isLoaded) {
+      saveData({ links: newLinks, folders: newFolders });
+    }
+  };
 
   const addLink = (linkData: Omit<Link, 'id' | 'createdAt'>) => {
     const newLink: Link = {
@@ -53,15 +47,17 @@ export const LinkProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       id: crypto.randomUUID(),
       createdAt: Date.now(),
     };
-    setLinks([newLink, ...links]);
+    updateAndSave([newLink, ...links], folders);
   };
 
   const updateLink = (id: string, updatedFields: Partial<Link>) => {
-    setLinks(links.map(l => l.id === id ? { ...l, ...updatedFields } : l));
+    const newLinks = links.map(l => l.id === id ? { ...l, ...updatedFields } : l);
+    updateAndSave(newLinks, folders);
   };
 
   const deleteLink = (id: string) => {
-    setLinks(links.filter(l => l.id !== id));
+    const newLinks = links.filter(l => l.id !== id);
+    updateAndSave(newLinks, folders);
   };
 
   const addFolder = (folderData: Omit<Folder, 'id' | 'createdAt'>) => {
@@ -70,17 +66,19 @@ export const LinkProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       id: crypto.randomUUID(),
       createdAt: Date.now(),
     };
-    setFolders([newFolder, ...folders]);
+    updateAndSave(links, [newFolder, ...folders]);
   };
 
   const updateFolder = (id: string, updatedFields: Partial<Folder>) => {
-    setFolders(folders.map(f => f.id === id ? { ...f, ...updatedFields } : f));
+    const newFolders = folders.map(f => f.id === id ? { ...f, ...updatedFields } : f);
+    updateAndSave(links, newFolders);
   };
 
   const deleteFolder = (id: string) => {
-    setFolders(folders.filter(f => f.id !== id));
+    const newFolders = folders.filter(f => f.id !== id);
     // Also move links out of this folder to root
-    setLinks(links.map(l => l.folderId === id ? { ...l, folderId: null } : l));
+    const newLinks = links.map(l => l.folderId === id ? { ...l, folderId: null } : l);
+    updateAndSave(newLinks, newFolders);
   };
 
   const searchLinks = (query: string, tag?: string) => {
@@ -95,6 +93,11 @@ export const LinkProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       return matchQuery && matchTag;
     });
   };
+
+  // Prevent flashing empty state before data loads, could also return a loading spinner here
+  if (!isLoaded) {
+    return null; // or <div className="loading-screen">Loading your links...</div>
+  }
 
   return (
     <LinkContext.Provider value={{
