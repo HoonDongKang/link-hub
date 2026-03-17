@@ -1,6 +1,17 @@
 {
   "links": [
     {
+      "url": "https://www.contribution.ac/",
+      "title": "오픈 소스 컨티리뷰션 아카데미",
+      "description": "오픈소스 컨티리뷰션 아카데미",
+      "tags": [
+        "오픈소스"
+      ],
+      "folderId": "a22cbc42-bf67-4708-91ab-94a4b7993674",
+      "id": "a282b215-c544-4084-9241-973afbb4fb6c",
+      "createdAt": 1773714685319
+    },
+    {
       "url": "https://missing.csail.mit.edu/",
       "title": "The Missing Semester of Your CS Education",
       "description": "CS 실무 강의",
