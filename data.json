@@ -1,6 +1,15 @@
 {
   "links": [
     {
+      "url": "https://browser.engineering/preface.html",
+      "title": "Web Browser Engineering",
+      "description": "웹 브라우저 엔지니어링 원서 by Python",
+      "tags": [],
+      "folderId": "8d0e88db-adae-4189-b213-a29b00c410bc",
+      "id": "2dac5e34-40ee-4c19-a72d-671c21d8e160",
+      "createdAt": 1773714861299
+    },
+    {
       "url": "https://blog.jcole.us/2013/01/10/btree-index-structures-in-innodb/",
       "title": "B+Tree index structures in InnoDB",
       "description": "InnoDB 의 B+tree 인덱스 구조",
