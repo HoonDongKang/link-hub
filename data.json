@@ -1,28 +1,6 @@
 {
   "links": [
     {
-      "url": "https://9oormthon.goorm.io/",
-      "title": "구름톤 in 제주 ",
-      "description": "구름톤 17기 지원 신청",
-      "tags": [
-        "구름톤"
-      ],
-      "folderId": "a22cbc42-bf67-4708-91ab-94a4b7993674",
-      "id": "20cfcc09-7812-4378-af07-00af5bcab17e",
-      "createdAt": 1773714747764
-    },
-    {
-      "url": "https://www.contribution.ac/",
-      "title": "오픈 소스 컨티리뷰션 아카데미",
-      "description": "오픈소스 컨티리뷰션 아카데미",
-      "tags": [
-        "오픈소스"
-      ],
-      "folderId": "a22cbc42-bf67-4708-91ab-94a4b7993674",
-      "id": "a282b215-c544-4084-9241-973afbb4fb6c",
-      "createdAt": 1773714685319
-    },
-    {
       "url": "https://missing.csail.mit.edu/",
       "title": "The Missing Semester of Your CS Education",
       "description": "CS 실무 강의",
@@ -70,10 +48,10 @@
   ],
   "folders": [
     {
-      "name": "채용 & 모집 공고",
-      "color": "#14b8a6",
-      "id": "a22cbc42-bf67-4708-91ab-94a4b7993674",
-      "createdAt": 1773714640869
+      "name": "DB",
+      "color": "#10b981",
+      "id": "66a2cb00-23db-45a0-840a-619df756ff8c",
+      "createdAt": 1773714777058
     },
     {
       "name": "AI",
