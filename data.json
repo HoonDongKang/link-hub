@@ -57,6 +57,12 @@
   ],
   "folders": [
     {
+      "name": "Web Programming",
+      "color": "#ef4444",
+      "id": "8d0e88db-adae-4189-b213-a29b00c410bc",
+      "createdAt": 1773714834305
+    },
+    {
       "name": "DB",
       "color": "#10b981",
       "id": "66a2cb00-23db-45a0-840a-619df756ff8c",
