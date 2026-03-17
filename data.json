@@ -48,6 +48,12 @@
   ],
   "folders": [
     {
+      "name": "채용 & 모집 공고",
+      "color": "#14b8a6",
+      "id": "a22cbc42-bf67-4708-91ab-94a4b7993674",
+      "createdAt": 1773714640869
+    },
+    {
       "name": "AI",
       "color": "#f59e0b",
       "id": "04eba311-870c-4e53-b9ab-b341964bdb26",
