@@ -1,6 +1,15 @@
 {
   "links": [
     {
+      "url": "https://blog.jcole.us/2013/01/10/btree-index-structures-in-innodb/",
+      "title": "B+Tree index structures in InnoDB",
+      "description": "InnoDB 의 B+tree 인덱스 구조",
+      "tags": [],
+      "folderId": "66a2cb00-23db-45a0-840a-619df756ff8c",
+      "id": "495ba73c-851d-46a1-bd59-d4425471d103",
+      "createdAt": 1773714802404
+    },
+    {
       "url": "https://missing.csail.mit.edu/",
       "title": "The Missing Semester of Your CS Education",
       "description": "CS 실무 강의",
