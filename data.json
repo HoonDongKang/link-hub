@@ -1,6 +1,15 @@
 {
   "links": [
     {
+      "url": "https://stibee.com/api/v1.0/emails/share/615R8ktn2jqbyuKu_wVobrVm-50aCwM",
+      "title": "AI에게 일 잘 시키는 법 = 좋은 팀장이 되는 법",
+      "description": "안드레이 카파시는 AI 에게 어떻게 일을 시킬까?",
+      "tags": [],
+      "folderId": "04eba311-870c-4e53-b9ab-b341964bdb26",
+      "id": "bbe3bcc0-aef0-4f45-8a9d-69dedea7dcae",
+      "createdAt": 1774242166413
+    },
+    {
       "url": "http://www.kocw.net/home/cview.do?cid=3646706b4347ef09",
       "title": "반효경 교수님 운영체제",
       "description": "운영체제",
