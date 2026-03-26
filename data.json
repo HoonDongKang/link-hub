@@ -1,6 +1,17 @@
 {
   "links": [
     {
+      "url": "https://awesome-nestjs.com/",
+      "title": " Nest JS 프로젝트나 팁들 모음",
+      "description": "",
+      "tags": [
+        "nestjs"
+      ],
+      "folderId": "8050122d-dbc9-412f-bf79-ea1b25c9c6e4",
+      "id": "3560f0b2-5da1-40d4-9b17-723f7344bbbc",
+      "createdAt": 1774487118714
+    },
+    {
       "url": "https://stibee.com/api/v1.0/emails/share/615R8ktn2jqbyuKu_wVobrVm-50aCwM",
       "title": "AI에게 일 잘 시키는 법 = 좋은 팀장이 되는 법",
       "description": "안드레이 카파시는 AI 에게 어떻게 일을 시킬까?",
