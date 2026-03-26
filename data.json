@@ -1,6 +1,18 @@
 {
   "links": [
     {
+      "url": "https://howdns.works/ko/",
+      "title": "만화로 보는 DNS 작동원리",
+      "description": "",
+      "tags": [
+        "dns",
+        "cs"
+      ],
+      "folderId": "8d0e88db-adae-4189-b213-a29b00c410bc",
+      "id": "7db86933-1152-44fc-9adc-696e583ae91c",
+      "createdAt": 1774487326088
+    },
+    {
       "url": "https://learngitbranching.js.org/",
       "title": "learning git branching",
       "description": "git 브랜치 시뮬레이터",
