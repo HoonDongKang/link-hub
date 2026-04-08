@@ -1,6 +1,15 @@
 {
   "links": [
     {
+      "url": "https://www.korecmblog.com/blog/node-js-event-loop#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%9D%98-%EC%97%AC%EB%9F%AC-%ED%8E%98%EC%9D%B4%EC%A6%88",
+      "title": "Node.js 이벤트 루프(Event Loop) 샅샅이 분석하기",
+      "description": "",
+      "tags": [],
+      "folderId": "8050122d-dbc9-412f-bf79-ea1b25c9c6e4",
+      "id": "858f2eb9-cd9d-43d4-86f3-ca6c2e5590d1",
+      "createdAt": 1775625043633
+    },
+    {
       "url": "https://wikidocs.net/book/19104",
       "title": "Claud Code Guide",
       "description": "클로드 코드 가이드",
