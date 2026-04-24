@@ -120,18 +120,6 @@
       "folderId": "8ddb70f5-a659-40e8-a287-cdc80a8d7b3e",
       "id": "89ab5710-5beb-4e6a-ad87-e0aeb2240247",
       "createdAt": 1773647039223
-    },
-    {
-      "url": "https://www.meetup.com/grafana-friends-seoul/events/313664799/",
-      "title": "Grafana & Friends Seoul #1: AI 시대의 SRE와 모니터링",
-      "description": "Grafana 밋업",
-      "tags": [
-        "grafana",
-        "backend"
-      ],
-      "folderId": "8050122d-dbc9-412f-bf79-ea1b25c9c6e4",
-      "id": "15bb4797-d2d5-4a88-a59a-d1297ca9a879",
-      "createdAt": 1773646944384
     }
   ],
   "folders": [
